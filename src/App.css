@@ -1,21 +1,33 @@
-body {
+/* ===== GLOBAL RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #0f172a;
   color: #e5e7eb;
 }
 
+/* ===== MAIN CONTAINER ===== */
 .container {
-  max-width: 820px;
+  max-width: 900px;
   margin: auto;
-  padding: 20px;
+  padding: 16px;
+  background: #0f172a;
 }
 
+/* ===== HEADINGS ===== */
 h2, h3, h4 {
   color: #f8fafc;
   margin-bottom: 10px;
 }
 
+/* ===== FORM ELEMENTS ===== */
 input, select, button {
   width: 100%;
   padding: 10px;
@@ -36,11 +48,19 @@ select option {
   background: #020617;
 }
 
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+/* ===== BUTTONS ===== */
 button {
   background: #2563eb;
   border: none;
   cursor: pointer;
   font-weight: 600;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -52,12 +72,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #334155;
-  margin: 20px 0;
-}
-
+/* ===== ERRORS ===== */
 .error-text {
   color: #ef4444;
   font-size: 12px;
@@ -65,12 +80,14 @@ hr {
   margin-bottom: 8px;
 }
 
-.footer {
-  text-align: center;
-  font-size: 13px;
-  color: #94a3b8;
+/* ===== HR ===== */
+hr {
+  border: none;
+  border-top: 1px solid #334155;
+  margin: 20px 0;
 }
 
+/* ===== ADMIN CARDS ===== */
 .card {
   flex: 1;
   background: #020617;
@@ -80,63 +97,20 @@ hr {
   text-align: center;
   font-size: 14px;
 }
+
 .card b {
   font-size: 22px;
   color: #38bdf8;
 }
 
-button {
-  margin-top: 10px;
-}
-
-input:focus, select:focus {
-  outline: none;
-  border-color: #38bdf8;
-}
-
-@media print {
-  button, input, select {
-    display: none !important;
-  }
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f6fa;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 16px;
-  background: white;
-}
-
-/* Inputs & selects responsive */
-input, select, button {
-  width: 100%;
-  max-width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-/* Desktop pe thoda compact */
-@media (min-width: 768px) {
-  input, select, button {
-    font-size: 15px;
-  }
-}
-
+/* ===== FOOTER MARQUEE ===== */
 .footer-marquee {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #0f172a;
-  color: #fff;
+  background: #020617;
+  color: #e5e7eb;
   overflow: hidden;
   height: 36px;
   z-index: 1000;
@@ -152,10 +126,24 @@ input, select, button {
 }
 
 @keyframes scroll-left {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-100%);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 768px) {
+  input, select, button {
+    font-size: 15px;
+  }
+}
+
+/* ===== PRINT FRIENDLY ===== */
+@media print {
+  button, input, select {
+    display: none !important;
   }
 }
